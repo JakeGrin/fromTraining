@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:with="lang=${#locale.language}" th:lang="${lang}">
+<body>
+<div>
+    <p>
+        <br><br>
+    <h1 align=center><b> Hello, <span th:text="${username}"></span>! </b></h1>
+    <p align=center>
+    <span th:if="${currentUserBucket.isEmpty()}">Make your order:</span>
+        <span th:unless="${currentUserBucket.isEmpty()}">You have already chosen:</span>
+    </p>
+    <div align=center>
+        <ol>
+            <li th:each="item: ${currentUserBucket}" th:text="${item}"/>
+        </ol>
+    </div>
+    <h2 align=center>
+        <form action='consumer' th:object="${makeGoodList}" method="POST">
+
+                        <select size="1" name="id" required="required">
+                            <option value=""> Select good:</option>
+                            <option th:each="entry : ${makeGoodList.entrySet()}"
+                                    th:value="${entry.key}"
+                                    th:utext="${entry.value}">
+                            </option>
+                        </select>
+        </p>
+    </h2>
+    <h2 align=center><input type="submit" value="Add item">
+        </form>
+        <br><br>
+        <form action="order" method="get">
+            <input type="submit" value="Submit">
+        </form>
+        <form action="start" method="get">
+            <input type="submit" value="Logout">
+        </form>
+    </h2>
+</div>
+</body>
+</html>

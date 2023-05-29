@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:with="lang=${#locale.language}" th:lang="${lang}">
+<body>
+<div>
+    <p>
+        <br><br>
+    <h1 align=center><b> Dear <span th:text="${username}"></span>, your order:</b></h1>
+    <div align=center>
+            <ol>
+                <li th:each="item: ${userBucket}" th:text="${item}"/>
+            </ol>
+        </div>
+    <h2 align=center><b> Total:<span th:text="${totalCost}"></span> $ </h2>
+    <h2 align=center> <form action="start" method="get">
+        <input type="submit" value="Logout">
+    </form>
+    </h2>
+</div>
+</body>
+</html>
