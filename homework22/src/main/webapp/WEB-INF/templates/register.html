@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:with="lang=${#locale.language}" th:lang="${lang}">
+<body>
+<br><br>
+<h1 align=center>You are on Registration Page</h1>
+<br><br>
+<div align=center>
+    <form action="register" method="post">
+        <input type="text" id="login" name="login" placeholder="Enter your name" required="required">
+        <input type="password" id="password" name="password" placeholder="Enter your password" required="required">
+        <br><br><br>
+        <input type="checkbox" id="agreement" name="agreement">
+        <label for="agreement">I agree with the terms of service</label>
+        <br><br>
+        <input type="submit" value="Enter">
+    </form>
+</div>
+</body>
+</html>
