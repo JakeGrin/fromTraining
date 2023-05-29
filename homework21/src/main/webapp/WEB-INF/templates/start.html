@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:with="lang=${#locale.language}" th:lang="${lang}">
+<body>
+<br><br>
+<div align="center">
+<form action= "start" method="post">
+<h2 align=center><b> Welcome to the Online Shop!</b></h2>
+    <br><br>
+    <h2 align=center>
+        <form action="start" method="post">
+    <input type="text" id="login" name="login" placeholder="Enter your name" required="required">
+    <input type="password" id="password" name="password" placeholder="Enter your password" required="required">
+    <br><br>
+    <input type="submit" value="Enter">
+</form>
+<br><br>
+<form action= "register" method="get">
+    <div>If you are not registered yet, please, register at first</div>
+    <br>
+    <input type="submit" id="registration" value="Register">
+    <br><br>
+</form>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
